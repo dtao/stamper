@@ -1,0 +1,21 @@
+{
+  "name": "stamper",
+  "version": "1.0.0",
+  "description": "Stamps for objects",
+  "main": "stamper.js",
+  "scripts": {
+    "test": "autodoc -t stamper.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dtao/stamper.git"
+  },
+  "author": "Dan Tao <daniel.tao@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dtao/stamper/issues"
+  },
+  "devDependencies": {
+    "autodoc": "~0.6.1"
+  }
+}
