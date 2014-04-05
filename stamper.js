@@ -33,6 +33,17 @@
   }
 
   /**
+   * Gets an object's stamp, if it has one.
+   *
+   * @param {Object}
+   * @return {string}
+   */
+  stamp.get = function get(object) {
+    var index = findObjectIndex(object);
+    return index >= 0 ? stampedObjects[index].id : null;
+  };
+
+  /**
    * Clears all recorded object stamps. The next stamped object will be 'A' again.
    */
   stamp.clear = function clear() {
@@ -52,13 +63,14 @@
 
   function getNextId() {
     var base = String.fromCharCode(currentObjectId++);
+    var result = cycleCounter > 1 ? base + cycleCounter : base;
 
     if (currentObjectId > 'Z'.charCodeAt(0)) {
       currentObjectId = 'A'.charCodeAt(0);
       ++cycleCounter;
     }
 
-    return cycleCounter > 1 ? base + cycleCounter : base;
+    return result;
   }
 
   if (typeof module === 'object' && module != null && module.exports) {
